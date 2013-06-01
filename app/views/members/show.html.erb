@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First:</b>
+  <%= @member.first %>
+</p>
+
+<p>
+  <b>Last:</b>
+  <%= @member.last %>
+</p>
+
+<p>
+  <b>Pledge class:</b>
+  <%= @member.pledge_class_id %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @member.active %>
+</p>
+
+<p>
+  <b>Admin:</b>
+  <%= @member.admin %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
