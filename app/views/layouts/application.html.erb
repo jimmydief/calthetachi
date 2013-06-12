@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Calthetachi</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>Cal Theta Chi – Mu Chapter</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Alegreya:400,700" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <div id="page-wrapper">
+    <header>
+      <div class="container">
+        <div id="logo">
+          <%= link_to "", root_path %>
+        </div>
+        
+        <form id="search-bar" action="post">
+          <input type="text" name="query" placeholder="Search">
+          <button type="submit">Go</button>
+        </form>
+        
+        <!-- facebook and linkedin icons/text here? -->
+      </div>
+    </header>
+    
+    <nav>
+      <div class="container">
+        <ul>
+          <li class="active"><%= link_to "Home", root_path %></li>
+          <li><%= link_to "About Us", "#" %></li>
+          <li><%= link_to "Rush", "#" %></li>
+          <li><%= link_to "Photos", "#" %></li>
+          <li><%= link_to "Active Members", "#" %></li>
+          <li><%= link_to "Alumni", "#" %></li>
+          <li><%= link_to "News", "#" %></li>
+          <li><%= link_to "Contact Us", "#" %></li>
+          <li><%= link_to "Apparel Store", "#" %></li>
+          <li><%= link_to "Member Zone", "#" %></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div id="page-content">
+      <div class="container">
+  
+      <%= yield %>
+  
+      </div> <!-- container -->
+    </div> <!-- page-content -->
+  </div> <!-- page-wrapper -->
+  <footer>
+    <div class="container">
+      <span>Sticky footer</span>
+    </div>
+  </footer>
 
 </body>
 </html>

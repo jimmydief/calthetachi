@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th>First</th>
-    <th>Last</th>
+    <th>First Name</th>
+    <th>Last Name</th>
     <th>Pledge class</th>
     <th>Active</th>
     <th>Admin</th>
@@ -14,8 +14,8 @@
 
 <% @members.each do |member| %>
   <tr>
-    <td><%= member.first %></td>
-    <td><%= member.last %></td>
+    <td><%= member.first_name %></td>
+    <td><%= member.last_name %></td>
     <td><%= member.pledge_class_id %></td>
     <td><%= member.active %></td>
     <td><%= member.admin %></td>

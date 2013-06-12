@@ -1,9 +1,14 @@
 Calthetachi::Application.routes.draw do
-  resources :members
 
+  resources :members do
+    resources :posts, :only => [:index]
+  end
 
-  resources :posts
-
+  resources :posts do
+    resources :comments, :only => [:create, :destroy]
+  end
+  
+  root :to => "landing#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
