@@ -1,6 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :member_id, :text, :title, :publish_date
-  belongs_to :member
+  attr_accessible :author, :text, :title, :publish_date
   has_many :comments
   
   def display_created_date

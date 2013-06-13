@@ -1,9 +1,5 @@
 Calthetachi::Application.routes.draw do
 
-  resources :members do
-    resources :posts, :only => [:index]
-  end
-
   resources :posts do
     resources :comments, :only => [:create, :destroy]
   end

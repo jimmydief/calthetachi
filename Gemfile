@@ -5,10 +5,7 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-gem 'mysql2'
-
-# use thin instead of WEBrick
+gem 'pg'
 gem 'thin'
 
 # Gems used only for assets and not required
