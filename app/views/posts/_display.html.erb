@@ -1,6 +1,6 @@
 <div class="post">  
   <h3><%= post.title %></h3>
   <p class="meta">posted by <%= post.author %> on <%= post.display_created_date %></p>
-  <p class="content"><%= post.text %></p>
+  <p class="content"><%= escapeHTML(post.text).gsub(/\n/, '</p><p>').html_safe %></p>
   <p class="comments"><%= link_to pluralize(0, "comment"), "#" %></p>
 </div>

@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Member</th>
+    <th>Author</th>
     <th>Text</th>
     <th></th>
     <th></th>
@@ -13,7 +13,7 @@
 <% @posts.each do |post| %>
   <tr>
     <td><%= post.title %></td>
-    <td><%= post.member_id %></td>
+    <td><%= post.author %></td>
     <td><%= post.text %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
