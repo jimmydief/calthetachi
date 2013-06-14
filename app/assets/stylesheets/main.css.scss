@@ -1,7 +1,7 @@
 // Variables
 $scarlet: #B22222;
 $nav-height: 35px;
-$footer-height: 60px;
+$footer-height: 45px;
 $container-width: 950px;
 
 html {
@@ -236,7 +236,7 @@ footer {
   clear: both;
   
   .container {
-    border-top: 1px solid lightgrey;
-    text-align: center;
+    background-color: lightgrey;
+    margin-bottom: 10px;
   }
 }
