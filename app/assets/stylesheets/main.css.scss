@@ -1,8 +1,14 @@
 // Variables
 $scarlet: #B22222;
 $nav-height: 35px;
-$footer-height: 45px;
+$footer-height: 110px;
 $container-width: 950px;
+
+* {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box
+}
 
 html {
   background-color: white;
@@ -34,6 +40,10 @@ h2 {
 h3 {
   font-size: 20px;
   line-height: 20px;
+}
+
+p {
+  margin: 0 0 10px 0;
 }
 
 a {
@@ -70,7 +80,7 @@ header {
 }
 
 #logo {
-  background: asset-url("layout/theta-chi-logo.png", image) no-repeat;
+  background: image-url("layout/theta-chi-logo.png") no-repeat;
   width: 530px;
   height: 90px;
   
@@ -230,13 +240,17 @@ img.lead {
 }
 
 footer {
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
   position: relative; 
   height: $footer-height;
   margin-top: -$footer-height;
   clear: both;
   
   .container {
-    background-color: lightgrey;
-    margin-bottom: 10px;
+    background: url("http://jimmydief.com/images/layout/JD-Logo-small-letterpressed.png") no-repeat right top;
+    position: relative;
+    text-align: center;
+    min-height: 57px;
   }
 }
