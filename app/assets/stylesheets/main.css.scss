@@ -217,7 +217,7 @@ img.lead {
 }
 
 .post {
-  border-bottom: 1px solid black;
+  border-top: 1px solid black;
 
   h3 {
     margin: {
@@ -236,7 +236,7 @@ img.lead {
   }
 }
 
-.post:first-of-type {
+.post:last-of-type {
   border-top: 1px solid black;
 }
 
