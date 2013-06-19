@@ -9,6 +9,8 @@ gem 'pg'
 gem 'thin'
 gem 'spud_photos', '~> 0.9.2'
 
+gem 'newrelic_rpm'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
