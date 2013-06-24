@@ -60,5 +60,9 @@ module Calthetachi
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    # authentication information for flickr application
+    FlickRaw.api_key = "59f5239d31cc0e937ba230c8d410c330"
+    FlickRaw.shared_secret = "0d1a5b086821f4f0"
   end
 end

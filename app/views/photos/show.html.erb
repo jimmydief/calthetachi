@@ -1,0 +1,9 @@
+<h1><%= @title %></h1>
+<p><%= @description %></p>
+
+<% @album.photo.each do |photo| %>
+
+  <% info = flickr.photos.getInfo(:photo_id => photo.id) %>
+  <%= image_tag FlickRaw.url_n(info) %>
+
+<% end %>

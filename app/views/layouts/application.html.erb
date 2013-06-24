@@ -13,33 +13,35 @@
     <header>
       <div class="container">
         <div id="logo">
-          <%= link_to "", root_path %>
+          <%= link_to root_path do %> <% end %>
         </div>
         
         <form id="search-bar" action="post">
-          <input type="text" name="query" placeholder="Search">
+          <input type="text" name="query" placeholder="Search" tabindex="1">
           <button type="submit">Go</button>
         </form>
         
-        <!-- facebook and linkedin icons/text here? -->
+        <ul id="social">
+          <li><%= link_to "Facebook", "https://www.facebook.com/CalThetaChi", :target => "_blank" %></li>
+          <li><%= link_to "Twitter", "https://twitter.com/CalThetaChi", :target => "_blank" %></li>
+          <li><%= link_to "LinkedIn", "http://www.linkedin.com/groups?gid=4940412", :target => "_blank" %></li>
+        </ul>
       </div>
     </header>
     
     <nav>
-      <div class="container">
-        <ul>
-          <li class="active"><%= link_to "Home", root_path %></li>
-          <li><%= link_to "About Us", "#" %></li>
-          <li><%= link_to "Rush", "#" %></li>
-          <li><%= link_to "Photos", photo_albums_path %></li>
-          <li><%= link_to "Active Members", "#" %></li>
-          <li><%= link_to "Alumni", "#" %></li>
-          <li><%= link_to "News", "#" %></li>
-          <li><%= link_to "Contact Us", "#" %></li>
-          <li><%= link_to "Apparel Store", "#" %></li>
-          <li><%= link_to "Member Zone", "#" %></li>
-        </ul>
-      </div>
+      <ul class="container">
+        <li class="active"><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About Us", "#" %></li>
+        <li><%= link_to "Rush", "#" %></li>
+        <li><%= link_to "Photos", photo_album_index_path %></li>
+        <li><%= link_to "Active Members", "#" %></li>
+        <li><%= link_to "Alumni", "#" %></li>
+        <li><%= link_to "News", posts_path %></li>
+        <li><%= link_to "Contact Us", "#" %></li>
+        <li><%= link_to "Apparel Store", "http://thetachi.bigcartel.com/", :target => "_blank" %></li>
+        <li><%= link_to "Member Zone", "#" %></li>
+      </ul>
     </nav>
     
     <div id="page-content">

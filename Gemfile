@@ -7,8 +7,8 @@ gem 'rails', '3.2.13'
 
 gem 'pg'
 gem 'thin'
-gem 'spud_photos', '~> 0.9.2'
 
+gem 'flickraw'
 gem 'newrelic_rpm'
 
 # Gems used only for assets and not required

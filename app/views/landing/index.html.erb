@@ -7,6 +7,7 @@
 <p>As the chapter nears its centennial, we continue to uphold our ideals of brotherhood, leadership, and dedication to academics. Truly incredible plans are coming together for Centennial on the weekend of November 16th, 2013. The event will be great fun for all and an excellent chance to catch up with brothers from all ages while celebrating 100 years of Mu Chapter. We hope to see you there!</p>
 
 <h2>Recent News</h2>
+<p>The latest happenings from Mu Chapter. More information is available at <%= link_to "our blog", posts_path %> or by <%= link_to "subscribing to the newsletter", "#" %>.</p>
 
 <% @posts.each do |post| %>
   <%= render :partial => "posts/display", :locals => { :post => post } %>

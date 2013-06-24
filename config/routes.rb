@@ -1,9 +1,11 @@
 Calthetachi::Application.routes.draw do
 
-  resources :posts do
+  root :to => "landing#index"
+  
+  resources :posts, :path => "news" do
     resources :comments, :only => [:create, :destroy]
   end
-  
-  root :to => "landing#index"
+
+  resources :photos, :only => [:index, :show], :as => "photo_album"
 
 end
