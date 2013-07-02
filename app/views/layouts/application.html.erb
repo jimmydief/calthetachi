@@ -16,11 +16,11 @@
           <%= link_to root_path do %> <% end %>
         </div>
         
-        <form id="search-bar" action="post">
+        <form id="search-bar" action="/news" method="get">
           <input type="text" name="query" placeholder="Search" tabindex="1">
           <button type="submit">Go</button>
         </form>
-        
+                
         <ul id="social">
           <li><%= link_to "Facebook", "https://www.facebook.com/CalThetaChi", :target => "_blank" %></li>
           <li><%= link_to "Twitter", "https://twitter.com/CalThetaChi", :target => "_blank" %></li>
@@ -31,14 +31,14 @@
     
     <nav>
       <ul class="container">
-        <li class="active"><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About Us", "#" %></li>
-        <li><%= link_to "Rush", "#" %></li>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About Us", about_us_path %></li>
+        <li><%= link_to "Rush", rush_path %></li>
         <li><%= link_to "Photos", photo_album_index_path %></li>
         <li><%= link_to "Active Members", "#" %></li>
         <li><%= link_to "Alumni", "#" %></li>
         <li><%= link_to "News", posts_path %></li>
-        <li><%= link_to "Contact Us", "#" %></li>
+        <li><%= link_to "Contact Us", contact_path %></li>
         <li><%= link_to "Apparel Store", "http://thetachi.bigcartel.com/", :target => "_blank" %></li>
         <li><%= link_to "Member Zone", "#" %></li>
       </ul>
@@ -47,7 +47,7 @@
     <div id="page-content">
       <div class="container">
   
-      <%= yield %>
+        <%= yield %>
   
       </div> <!-- container -->
     </div> <!-- page-content -->
@@ -55,9 +55,9 @@
   <footer>
     <div class="container">
       <p>All content copyright &copy; 2013 Theta Chi, Mu Chapter. All rights reserved.</p>
-      <p>Designed and built by <%= link_to "James Diefenderfer", "http://www.jimmydief.com" %>, '15</p>
+      <p>2499 Piedmont Avenue, Berkeley, California 94704</p>
+      <%= link_to "http://www.jimmydief.com", :id => "designer-promo" do %> <% end %>
     </div>
   </footer>
-
 </body>
 </html>
