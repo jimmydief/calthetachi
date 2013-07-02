@@ -7,7 +7,7 @@
     <%= link_to photo_album_path(album.title.downcase.gsub(" ", "-")) do %>
   
     <h3><%= album.title %></h3>
-    <%= image_tag FlickRaw.url_n(info) %>
+    <%= image_tag FlickRaw.url_q(info) %>
     
     <% end %>
   </div>
