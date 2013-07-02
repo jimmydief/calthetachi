@@ -1,5 +1,9 @@
 <h1>Chapter News</h1>
 
+<% if @query %>
+Showing <%= pluralize @posts.count, "result" %> for "<%= @query %>"
+<% end %>
+
 <% @posts.each do |post| %>
   <%= render :partial => "posts/display", :locals => { :post => post } %>
 <% end %>
