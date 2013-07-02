@@ -7,6 +7,20 @@
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Alegreya:400,700" %>
   <%= csrf_meta_tags %>
+  
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      $("nav li").each(function() {
+        if ($(this).attr("name") == "<%= params[:controller] %>" || $(this).attr("name") == "<%= params[:action] %>") {
+          $(this).addClass("active");
+        }
+      })
+      
+      if ($("nav li.active").size() === 0) {
+        $("nav li[name='home']").addClass("active");
+      }
+    });
+  <% end %>
 </head>
 <body>
   <div id="page-wrapper">
@@ -17,7 +31,7 @@
         </div>
         
         <form id="search-bar" action="/news" method="get">
-          <input type="text" name="query" placeholder="Search" tabindex="1">
+          <input type="text" name="query" placeholder="Search" value="<%= params[:query] %>"tabindex="1">
           <button type="submit">Go</button>
         </form>
                 
@@ -31,16 +45,16 @@
     
     <nav>
       <ul class="container">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About Us", about_us_path %></li>
-        <li><%= link_to "Rush", rush_path %></li>
-        <li><%= link_to "Photos", photo_album_index_path %></li>
-        <li><%= link_to "Active Members", "#" %></li>
-        <li><%= link_to "Alumni", "#" %></li>
-        <li><%= link_to "News", posts_path %></li>
-        <li><%= link_to "Contact Us", contact_path %></li>
-        <li><%= link_to "Apparel Store", "http://thetachi.bigcartel.com/", :target => "_blank" %></li>
-        <li><%= link_to "Member Zone", "#" %></li>
+        <li name="home"><%= link_to "Home", root_path %></li>
+        <li name="about"><%= link_to "About Us", about_us_path %></li>
+        <li name="rush"><%= link_to "Rush", rush_path %></li>
+        <li name="photos"><%= link_to "Photos", photo_album_index_path %></li>
+        <li name="actives"><%= link_to "Active Members", "#" %></li>
+        <li name="alumni"><%= link_to "Alumni", "#" %></li>
+        <li name="posts"><%= link_to "News", posts_path %></li>
+        <li name="contact"><%= link_to "Contact Us", contact_path %></li>
+        <li name="apparel"><%= link_to "Apparel Store", "http://thetachi.bigcartel.com/", :target => "_blank" %></li>
+        <li name="member_zone"><%= link_to "Member Zone", "#" %></li>
       </ul>
     </nav>
     
