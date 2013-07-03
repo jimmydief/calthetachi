@@ -3,8 +3,8 @@
 
 <% @albums.each do |album| %>
   <% info = flickr.photos.getInfo(:photo_id => album.primary) %>
-  <div class="photo">
-    <%= link_to photo_album_path(album.title.downcase.gsub(" ", "-")) do %>
+  <div class="album">
+    <%= link_to photo_album_path(album.title.downcase.gsub(/[^\w ]/, "").gsub(" ", "-")) do %>
   
     <h3><%= album.title %></h3>
     <%= image_tag FlickRaw.url_n(info) %>

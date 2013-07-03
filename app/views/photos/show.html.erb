@@ -2,8 +2,12 @@
 <p><%= @description %></p>
 
 <% @album.photo.each do |photo| %>
-
-  <% info = flickr.photos.getInfo(:photo_id => photo.id) %>
-  <%= image_tag FlickRaw.url_q(info) %>
+  
+  <div class="photo">
+    <% info = flickr.photos.getInfo(:photo_id => photo.id) %>
+    <%= link_to FlickRaw.url_c(info), :rel => "lightbox-album", :title => info.title do %>
+    <%= image_tag FlickRaw.url_q(info) %>
+    <% end %>
+  </div>  
 
 <% end %>

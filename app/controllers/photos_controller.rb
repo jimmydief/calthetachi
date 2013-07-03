@@ -30,14 +30,13 @@ class PhotosController < ApplicationController
     flickr_user_id = "97852663@N04"
     
     @albums = flickr.photosets.getList(:user_id => flickr_user_id)
-    
   end
   
   def set_photoset_hash
     
     @album_names = {}
     @albums.each do |album|
-      @album_names[album.title.downcase.gsub(" ", "-")] = album.id
+      @album_names[album.title.downcase.gsub(/[^\w ]/, "").gsub(" ", "-")] = album.id
     end
     
   end

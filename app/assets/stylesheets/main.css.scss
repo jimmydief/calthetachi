@@ -298,7 +298,7 @@ footer {
   }
 }
 
-.photo {
+.album {
   width: 310px;
   float: left;
   
@@ -313,6 +313,16 @@ footer {
 
   a h3 {
     color: black;
+  }
+}
+
+.photo {
+  width:150px;
+  height: 150px;
+  float: left;
+  
+  &:not(:nth-of-type(5n)) {
+    margin-right: 10px;
   }
 }
 
