@@ -21,6 +21,20 @@ class LandingController < ApplicationController
   
   end
   
+  # Active Member Info
+  def actives
+  
+    # Static
+  
+  end
+  
+  # Alumni Info & Resources
+  def alumni
+  
+    # Static
+  
+  end
+  
   # Contact Us
   def contact
   
