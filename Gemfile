@@ -12,6 +12,7 @@ gem 'flickraw'
 gem 'newrelic_rpm'
 gem 'pg_search'
 gem 'actionview-encoded_mail_to'
+gem 'stringex'
 
 # Gems used only for assets and not required
 # in production environments by default.

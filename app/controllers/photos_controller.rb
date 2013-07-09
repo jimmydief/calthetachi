@@ -36,7 +36,7 @@ class PhotosController < ApplicationController
     
     @album_names = {}
     @albums.each do |album|
-      @album_names[album.title.downcase.gsub(/[^\w ]/, "").gsub(" ", "-")] = album.id
+      @album_names[album.title.parameterize] = album.id
     end
     
   end
