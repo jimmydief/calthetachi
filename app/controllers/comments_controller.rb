@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def create
     
-    @post = Post.find_by_slug(params[:post_id])
+    @post = Post.find_by_slug!(params[:post_id])
     @comment = @post.comments.create(params[:comment])
     
     if @comment.save
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   
     p params.inspect
   
-    @post = Post.find_by_slug(params[:post_id])
+    @post = Post.find_by_slug!(params[:post_id])
     @comment = Comment.find(params[:id])
     
     if @comment.destroy
