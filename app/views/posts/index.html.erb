@@ -3,6 +3,12 @@
 <% end %>
 
 <div class="page-header">
+  <% if logged_in? %>
+    <%= link_to "New Post", new_post_path, :class => "button" %>
+  <% else %>
+    <%= link_to "Admin Login", member_zone_path, :class => "button" %>
+  <% end %>
+
   <h1>Chapter News</h1>
   <p>Recent news and updates from the active brothers at Mu Chapter.</p>
 </div>
@@ -13,10 +19,4 @@ Showing <%= pluralize @posts.count, "result" %> for "<%= @query %>"
 
 <% @posts.each do |post| %>
   <%= render :partial => "posts/display", :locals => { :post => post } %>
-<% end %>
-
-<% if logged_in? %>
-  <%= link_to "New Post", new_post_path, :class => "button pull-right" %>
-<% else %>
-  <%= link_to "Admin Login", member_zone_path, :class => "button pull-right" %>
 <% end %>
