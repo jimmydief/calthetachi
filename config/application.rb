@@ -65,9 +65,13 @@ module Calthetachi
     FlickRaw.api_key = "59f5239d31cc0e937ba230c8d410c330"
     FlickRaw.shared_secret = "0d1a5b086821f4f0"
     
-    # Prevent error fields being highlighted
+    # Prevent error fields in forms from being highlighted
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
       "#{html_tag}".html_safe 
     }
+    
+    # set default time zone to Pacific
+    config.time_zone = "Pacific Time (US & Canada)"
+    config.active_record.default_timezone = :local
   end
 end
