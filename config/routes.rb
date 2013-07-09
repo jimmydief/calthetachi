@@ -1,5 +1,9 @@
 Calthetachi::Application.routes.draw do
 
+  get "errors/not_found"
+
+  get "errors/internal"
+
   root :to => "landing#index"
   
   match "about" => "landing#about", :as => "about_us"
@@ -15,5 +19,9 @@ Calthetachi::Application.routes.draw do
   end
 
   resources :photos, :only => [:index, :show], :as => "photo_album"
+  
+  # Error handling
+  match "/404", :to => "errors#not_found"
+  match "/500", :to => "errors#internal"
 
 end
