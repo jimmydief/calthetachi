@@ -1,18 +1,11 @@
 class ErrorsController < ApplicationController
-  before_filter :set_exception
 
   def not_found
-    @error = env["action_dispatch.exception"]
+    # Static
   end
 
   def internal
-    
-  end
-  
-  protected
- 
-  def set_exception
-    @error = env["action_dispatch.exception"]
+    # Static
   end
   
 end
