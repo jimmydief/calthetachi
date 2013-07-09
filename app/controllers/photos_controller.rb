@@ -15,6 +15,9 @@ class PhotosController < ApplicationController
   
     album_name = params[:id]
     album_id = @album_names[album_name]
+    
+    render "errors/not_found" and return if album_id.blank?
+    
     @album = flickr.photosets.getPhotos(:photoset_id => album_id)
     
     info = flickr.photosets.getInfo(:photoset_id => album_id)
