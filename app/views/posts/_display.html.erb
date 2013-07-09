@@ -1,6 +1,10 @@
 <article>  
   <h3><%= link_to post.title, post_path(post) %></h3>
   <p class="meta">posted by <%= post.author %> on <%= post.display_created_date %></p>
-  <p class="content"><%= simple_format post.text %></p>
-  <p class="comments"><%= link_to pluralize(0, "comment"), "#" %></p>
+  
+  <%= simple_format post.text %>
+  
+  <p class="comments-count"><%= link_to pluralize(post.comments.count, "comment"), post_path(post, :anchor => "comments") %></p>
+  <%= link_to "Full Story", post, :class => "button " %>
+  <%= link_to "Add Comment", post_path(post, :anchor => "add-comment"), :class => "button " %>
 </article>

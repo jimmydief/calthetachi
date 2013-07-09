@@ -1,6 +1,47 @@
-<p id="notice"><%= notice %></p>
+<% flash.each do |name, msg| %>
+  <% if name == :error %>
+    <p class="error"><%= msg %></p>
+  <% else %>
+    <p id="notice"><%= msg %></p>
+  <% end %>
+<% end %>
 
-<%= render :partial => "posts/display", :locals => { :post => @post } %>
+<div class="page-header">
+  <h1><%= @post.title %></h1>
+  <p class="meta">posted by <%= @post.author %> on <%= @post.display_created_date %></p>
+</div>
+  
+<p><%= simple_format @post.text %></p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<div class="post-comments">
+  <h3><a name="comments">Comments (<%= @post.comments.count %>)</a></h3>
+  <% if @post.comments.any? %>
+    <% @post.comments.each do |comment| %>
+      <%= render :partial => "posts/comment", :locals => { :comment => comment } %>
+    <% end %>
+  <% else %>
+    <p>No comments yet.
+  <% end %>
+  
+  <h4><a name="add-comment">Add Comment</a></h4>
+  
+  <%= form_for [@post, @post.comments.build] do |f| %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :text %><br />
+      <%= f.text_area :text %>
+    </div>
+    <div class="actions">
+    <%= f.submit "Submit Comment", :style => "line-height: 19px;" %>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to "Back", posts_path, :class => "button" %>
+<% if logged_in? %>
+  <%= link_to "Edit", edit_post_path, :class => "button " %>
+  <%= link_to "Delete", @post, :method => :delete, :confirm => "Are you sure that you want to delete this post?", :class => "button" %>
+<% end %>

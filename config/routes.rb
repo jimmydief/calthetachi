@@ -1,7 +1,5 @@
 Calthetachi::Application.routes.draw do
 
-  get "member_zone/index"
-
   root :to => "landing#index"
   
   match "about" => "landing#about", :as => "about_us"
@@ -12,7 +10,7 @@ Calthetachi::Application.routes.draw do
   
   match "member_zone" => "member_zone#index", :as => "member_zone"
   
-  resources :posts, :path => "news" do
+  resources :posts, :path => "news" do  
     resources :comments, :only => [:create, :destroy]
   end
 

@@ -64,5 +64,10 @@ module Calthetachi
     # authentication information for flickr application
     FlickRaw.api_key = "59f5239d31cc0e937ba230c8d410c330"
     FlickRaw.shared_secret = "0d1a5b086821f4f0"
+    
+    # Prevent error fields being highlighted
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+      "#{html_tag}".html_safe 
+    }
   end
 end
