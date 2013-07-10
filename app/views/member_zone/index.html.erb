@@ -2,7 +2,7 @@
   <h1>Member Zone</h1>
   <p>Resources for active brothers of the chapter.</p>
 </div>
-
+ 
 <section name="test-bank">
   <h3>Test Bank</h3>
   <p>The test bank can be accessed by logging into <%= link_to "Google Drive", "https://drive.google.com/" %> with the following credentials:</p>
@@ -18,4 +18,72 @@
 <section name="calendar">
   <h3>Event Calendar</h3>
   <p>Chapter events will be posted in the calendar below which can be synced with your computer or phone.</p>
+</section>
+
+<section name="readme">
+  <h2>Admin Instructions</h2>
+  <hr>
+  
+  <nav class="pills">
+    <ul>
+      <li data-section-name="hosting-info" class="active"><a>Site Information</a></li>
+      <li data-section-name="articles"><a>Articles & Comments</a></li>
+      <li data-section-name="posting-photos"><a>Managing Photos</a></li>
+      <li data-section-name="account-logins"><a>Account Logins</a></li>
+    </ul>
+  </nav>
+  
+  <section name="hosting-info">
+    <h3>Hosting Information</h3>
+    <p>This site is a Ruby on Rails app, tracked by a git repository that is deployed to Heroku. The database is PostgreSQL and is also hosted on Heroku. The domain name is registered with Namecheap. All of the photo albums and photos come from Flickr.</p>
+    
+    <p>Login information for these services can be found in the "Account Logins" tab.</p>
+  </section>
+  
+  <section name="articles">
+    <h3>Posting Articles</h3>
+    <p>In order to post news articles, go to the News section and click the "New Article" button in the top right. If you aren't logged in, you will need to do so by visiting the Member Zone or clicking the "Admin Login" that will appear in place of the "New Article" button. Fill out all the title, author, and text fields, then submit your post.</p>
+    
+    <h3>Managing Articles</h3>
+    <p>Articles can be edited or deleted via buttons in the individual article pages if you are logged in.</p>
+    
+    <h3>Managing Comments</h3>
+    <p>Comments on posts can be deleted from the individual article page if you are logged in.</p>
+  </section>
+  
+  <section name="posting-photos">
+    <h3>Managing Photos</h3>
+    <p>All photos on the site are pulled from the house's Flickr account. Albums on the site are actually photosets on Flickr. When uploading new photos or creating photosets, sets should be given names and descriptions and photos should be given titles.</p>
+  </section>
+  
+  <section name="account-logins">
+    <h3>Account Logins</h3>
+    <p>Login information and credentials for the various services used by the site.</p>
+      <section name="heroku">
+        <h4>Heroku</h4>
+        <p>The house does not have a Heroku account, but editing permission for the app can be given to a collaborator if desired.</p>
+      </section>
+      
+      <section name="namecheap">
+        <h4>Namecheap</h4>
+        <dl>
+          <dt>Username</dt>
+          <dd>thetachimu</dd>
+          
+          <dt>Password</dt>
+          <dd>#4L!pn6@HnD</dd>
+        </dl>
+      </section>
+      
+      <section name="flickr">
+        <h4>Flickr</h4>
+        <dl>
+          <dt>Username</dt>
+          <dd>calthetachi</dd>
+          
+          <dt>Password</dt>
+          <dd>h3lpingh4nd</dd>
+        </dl>
+      </section>
+  </section>
 </section>

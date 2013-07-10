@@ -1,8 +1,17 @@
 // Layout variables
 $scarlet: #B22222;
-$nav-height: 35px;
+$silver: #dfdfdf;
 $footer-height: 110px;
 $container-width: 950px;
+
+// Layout mixins
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
 
 * {
   box-sizing:border-box;
@@ -185,7 +194,7 @@ header {
       }
     }
     
-    #social {
+    #social-media {
       position: absolute;
       top: 50px;
       right: 0;
@@ -213,59 +222,90 @@ header {
 }
 
 nav {
-  background-color: #b60002;
-  border-bottom: 6px solid #dfdfdf;
-  height: $nav-height + 6px;
-  
   ul {
-    border-left: 1px solid #900;
-    height: $nav-height;
-    margin: 0;
     padding: 0;
-    overflow: hidden;
+    @include clearfix;
+  }
+
+  li {
+    display: inline-block;
+    float:left;
+  }
+  
+  &#menu {
+    background-color: #b60002;
+    border-bottom: 6px solid $silver;
     
-    li {
-      display: inline-block;
-      float:left;
-      border-right: 1px solid #ca0002;
-      height: $nav-height;
-      margin: 0;
-      padding: 0;
+    ul {
+      border-left: 1px solid #900;
+      overflow: hidden;
       
-      a {
-        display: block;
-        height: $nav-height;
-        border-right: 1px solid #900;
-        padding: 0 14px;
-        color: white;
-        font-weight: 600;
-        line-height: 33px;
-        overflow: hidden;
+      li {
+        border-right: 1px solid #ca0002;
+        margin: 0;
+        padding: 0;
         
-        &:hover, &:active {
-          background-color: #900;
+        a {
+          display: block;
+          height: 100%;
+          border-right: 1px solid #900;
+          padding: 0 14px;
           color: white;
-          text-decoration: none;
-        }
-      }
-      
-      &:first-child {
-        a {
-          border-left: 1px solid #ca0002;
-        }
-      }
-      
-      &.active {
-        background-color: #dfdfdf;
-        
-        a {
-          color: black;
-          font-weight: 800;
+          font-weight: 600;
+          line-height: 33px;
+          overflow: hidden;
           
           &:hover, &:active {
-            background-color: inherit;
+            background-color: #900;
+            color: white;
+            text-decoration: none;
           }
         }
+        
+        &:first-child {
+          a {
+            border-left: 1px solid #ca0002;
+          }
+        }
+        
+        &.active {
+          background-color: #dfdfdf;
+          
+          a {
+            color: black;
+            font-weight: 800;
+            
+            &:hover, &:active {
+              background-color: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  &.pills {
+    li {
+      a {
+        border-radius: 4px;
+        padding: 5px 8px;
+        text-decoration: none;
+        color: dimgray;
+        cursor: pointer;
+        
+        &:hover {
+          background-color: $silver;
+          color: black;
+        }
+      }
+      
+      &.active > a{
+        background-color: dimgray;
+        color: white;
+      }
+      
+      &:not(:last-of-type) {
+        margin-right: 2px;
       }
     }
   }
@@ -454,12 +494,7 @@ footer {
     bottom: 20px;
   }
   
-  // clearfix
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  @include clearfix;
 }
 
 dl {
@@ -479,6 +514,14 @@ dl {
   
   dd {
     margin: 0;
+  }
+  
+  dl {
+    clear: both;
+    margin: {
+      left: 20px;
+      bottom: 0;
+    }
   }
 }
 
