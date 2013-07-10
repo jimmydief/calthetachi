@@ -11,16 +11,20 @@
 
   <h1>Chapter News</h1>
   <% if @query && @posts.any? %>
-    <p>Showing <%= pluralize @posts.count, "result" %> for "<%= @query %>"</p>
+    <p>Found <%= pluralize @total, "result" %> for "<%= @query %>"</p>
   <% else %>
     <p>Recent news and updates from the active brothers at Mu Chapter.</p>
   <% end %>
 </div>
 
-<% if @posts.any? %>
-  <% @posts.each do |post| %>
-    <%= render :partial => "posts/display", :locals => { :post => post } %>
-  <% end %>
+<% if @total > 0 %>
+  <section id="articles">
+    <%= render @posts %>
+  </section>
+  
+  <section id="paginator">
+    <%= paginate @posts, :remote => true %>
+  </section>
 <% else %>
   <h4>No results found for "<%= @query %>". Please try again.</h4>
 <% end %>

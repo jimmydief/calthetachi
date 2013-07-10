@@ -10,11 +10,11 @@ class PostsController < ApplicationController
     else  
       @posts = Post.order("created_at DESC")
     end
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-    end
+    
+    page = params[:page] || 1
+    
+    @total = @posts.count
+    @posts = @posts.page(page).per(5)
   end
 
   # GET /posts/1

@@ -12,9 +12,7 @@
     <p>The latest happenings from Mu Chapter. More information is available in the <%= link_to "news section", posts_path %> or by <%= mail_to "jason.huertas@gmail.com", "subscribing to the newsletter", :subject => "Mu Chapter Association Newsletter", :body => "Hello, I would like to start receiving the Mu Chapter Newsletter.", :encode => :hex %>.</p>
   </div>
   
-  <% @posts.each do |post| %>
-    <%= render :partial => "posts/display", :locals => { :post => post } %>
-  <% end %>
+  <%= render @posts %>
   
   <%= link_to "More News", posts_path, :class => "button pull-right" %>
 </section>
