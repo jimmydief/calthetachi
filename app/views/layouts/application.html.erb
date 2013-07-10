@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700" %>
   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Alegreya:400,700" %>
+  <%= favicon_link_tag %>
   <%= csrf_meta_tags %>
   
   <meta name="keywords" content="Cal, Berkeley, UCB, University of California, Golden Bears, Theta Chi, Theta Chi Mu, Cal Theta Chi, ΘΧ, fraternity">
@@ -35,7 +36,7 @@
         </div>
         
         <form id="search-bar" action="/news" method="get">
-          <input type="text" name="query" placeholder="Search" value="<%= params[:query] %>"tabindex="1">
+          <input type="text" name="query" placeholder="Search News" value="<%= params[:query] %>"tabindex="1">
           <button type="submit">Go</button>
         </form>
                 
