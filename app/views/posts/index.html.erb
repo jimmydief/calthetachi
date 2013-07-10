@@ -10,13 +10,17 @@
   <% end %>
 
   <h1>Chapter News</h1>
-  <p>Recent news and updates from the active brothers at Mu Chapter.</p>
+  <% if @query && @posts.any? %>
+    <p>Showing <%= pluralize @posts.count, "result" %> for "<%= @query %>"</p>
+  <% else %>
+    <p>Recent news and updates from the active brothers at Mu Chapter.</p>
+  <% end %>
 </div>
 
-<% if @query %>
-Showing <%= pluralize @posts.count, "result" %> for "<%= @query %>"
-<% end %>
-
-<% @posts.each do |post| %>
-  <%= render :partial => "posts/display", :locals => { :post => post } %>
+<% if @posts.any? %>
+  <% @posts.each do |post| %>
+    <%= render :partial => "posts/display", :locals => { :post => post } %>
+  <% end %>
+<% else %>
+  <h4>No results found for "<%= @query %>". Please try again.</h4>
 <% end %>
