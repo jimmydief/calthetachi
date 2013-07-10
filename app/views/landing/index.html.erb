@@ -9,7 +9,7 @@
 <section name="news">
   <div class="page-header">
     <h2>Recent News</h2>
-    <p>The latest happenings from Mu Chapter. More information is available at <%= link_to "our blog", posts_path %> or by <%= mail_to "jason.huertas@gmail.com", "subscribing to the newsletter", :subject => "Mu Chapter Association Newsletter", :body => "Hello, I would like to start receiving the Mu Chapter Newsletter.", :encode => :hex %>.</p>
+    <p>The latest happenings from Mu Chapter. More information is available in the <%= link_to "news section", posts_path %> or by <%= mail_to "jason.huertas@gmail.com", "subscribing to the newsletter", :subject => "Mu Chapter Association Newsletter", :body => "Hello, I would like to start receiving the Mu Chapter Newsletter.", :encode => :hex %>.</p>
   </div>
   
   <% @posts.each do |post| %>
