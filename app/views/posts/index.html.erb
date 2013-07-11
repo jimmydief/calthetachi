@@ -20,9 +20,7 @@
 <% if @total > 0 %>
   <section id="articles">
     <%= render @posts %>
-  </section>
-  
-  <section id="paginator">
+    
     <%= paginate @posts, :remote => true %>
   </section>
 <% else %>

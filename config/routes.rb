@@ -1,5 +1,7 @@
 Calthetachi::Application.routes.draw do
 
+  get "rush_recommendations/create"
+
   get "errors/not_found"
 
   get "errors/internal"

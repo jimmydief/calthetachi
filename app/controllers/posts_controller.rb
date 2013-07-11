@@ -15,6 +15,12 @@ class PostsController < ApplicationController
     
     @total = @posts.count
     @posts = @posts.page(page).per(5)
+    
+    respond_to do |format|
+      format.html # show.html.erb
+      format.js { render :nothing => true }
+    end
+    
   end
 
   # GET /posts/1

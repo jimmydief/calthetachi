@@ -10,12 +10,14 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'thin'
 
-gem 'flickraw'
-gem 'newrelic_rpm'
-gem 'pg_search'
-gem 'actionview-encoded_mail_to'
-gem 'stringex'
-gem 'kaminari'
+gem 'flickraw' # flickr api integration
+gem 'newrelic_rpm' # analytics
+gem 'pg_search' # full-text search
+gem 'actionview-encoded_mail_to' # mailto obfuscation
+gem 'stringex' # url slugs instead of ids
+gem 'kaminari' # ajax pagination
+gem 'faker' # fabricated db records for testing
+gem 'wiselinks'
 
 # Gems used only for assets and not required
 # in production environments by default.

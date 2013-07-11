@@ -1,6 +1,7 @@
 // Layout variables
 $scarlet: #B22222;
 $silver: #dfdfdf;
+$lightgrey: #f5f5f5;
 $footer-height: 110px;
 $container-width: 950px;
 
@@ -232,6 +233,12 @@ nav {
     float:left;
   }
   
+  a {
+    &:hover, &:active {
+      text-decoration: none;
+    } 
+  }
+  
   &#menu {
     background-color: #b60002;
     border-bottom: 6px solid $silver;
@@ -258,7 +265,6 @@ nav {
           &:hover, &:active {
             background-color: #900;
             color: white;
-            text-decoration: none;
           }
         }
         
@@ -289,8 +295,7 @@ nav {
       a {
         border-radius: 4px;
         padding: 5px 8px;
-        text-decoration: none;
-        color: dimgray;
+        color: dimgrey;
         cursor: pointer;
         
         &:hover {
@@ -300,12 +305,60 @@ nav {
       }
       
       &.active > a{
-        background-color: dimgray;
+        background-color: dimgrey;
         color: white;
       }
       
       &:not(:last-of-type) {
         margin-right: 2px;
+      }
+    }
+  }
+  
+  &.pagination {
+    display: table;
+    margin: 0 auto;
+    
+    span, a {
+      padding: 6px 12px;
+      border-color: #dfdfdf;
+      border-style: solid;
+      
+      &.page {
+        border-width: 1px 1px 1px 0;
+      }
+      
+      &.prev, &.next {
+        position: relative;
+        top: -1px;
+        padding: {
+          top: 5px;
+          bottom: 7px;
+        }
+      }
+      
+      &.prev {
+        border-radius: 4px 0 0 4px;
+        border-width: 1px;
+      }
+      
+      &.next {
+        border-radius: 0 4px 4px 0;
+        border-width: 1px 1px 1px 0;
+      }
+    }
+    
+    span {
+      color: dimgrey;    
+    
+      &.current {
+        background-color: $lightgrey;
+      }
+    }
+    
+    a {
+      &:hover, &:active {
+        background-color: $lightgrey;
       }
     }
   }
@@ -357,6 +410,11 @@ img.lead {
   .button {
     float: right;
     margin-top: 2px;
+  }
+  
+  & + section {
+    position: relative;
+    top: 8px;
   }
 }
 
@@ -436,7 +494,7 @@ article {
 }
 
 footer {
-  background-color: #f5f5f5;
+  background-color: $lightgrey;
   border-top: 1px solid #e5e5e5;
   position: relative; 
   height: $footer-height;
