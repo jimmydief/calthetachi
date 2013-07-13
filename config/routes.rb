@@ -19,6 +19,8 @@ Calthetachi::Application.routes.draw do
   resources :posts, :path => "news" do  
     resources :comments, :only => [:create, :destroy]
   end
+  
+  resources :rush_recommendations, :only => [:create]
 
   resources :photos, :only => [:index, :show], :as => "photo_album"
   

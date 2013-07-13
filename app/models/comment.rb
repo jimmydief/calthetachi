@@ -4,7 +4,4 @@ class Comment < ActiveRecord::Base
   
   validates_presence_of :name, :text
   
-  def display_created_date
-    self.created_at.strftime("%B #{ActiveSupport::Inflector.ordinalize(self.created_at.day)}, %Y at %-I:%M %P")
-  end
 end

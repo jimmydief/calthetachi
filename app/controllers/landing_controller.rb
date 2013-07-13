@@ -17,7 +17,7 @@ class LandingController < ApplicationController
   # Rush
   def rush
   
-    # Static
+    @rush_recommendation = RushRecommendation.new
   
   end
   

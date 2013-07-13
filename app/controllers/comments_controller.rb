@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @post
     else
-      redirect_to @post, :flash => {:error => "Comment creation failed. Please make sure all fields are filled in."}
+      redirect_to @post, :flash => {:error => "Comment creation failed. Please make sure that all fields are filled in."}
     end
     
   
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     
     if @comment.destroy
-      redirect_to @post, notice: 'Comment was successfully deleted!'
+      redirect_to @post, :notice => 'Comment was successfully deleted!'
     end
   
   end

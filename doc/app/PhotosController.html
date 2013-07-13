@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
-<title>module ApplicationHelper - Rails Application Documentation</title>
+<title>class PhotosController - Rails Application Documentation</title>
 
 <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
 
@@ -20,7 +20,7 @@
 <script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
 
 
-<body id="top" class="module">
+<body id="top" class="class">
 <nav id="metadata">
   <nav id="home-section" class="section">
   <h3 class="section-header">
@@ -47,7 +47,7 @@
     <nav id="file-list-section" class="section">
   <h3 class="section-header">Defined In</h3>
   <ul>
-    <li>app/helpers/application_helper.rb
+    <li>app/controllers/photos_controller.rb
   </ul>
 </nav>
 
@@ -56,7 +56,13 @@
 
   <div id="class-metadata">
     
-    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
     
     <!-- Method Quickref -->
 <nav id="method-list-section" class="section">
@@ -64,7 +70,9 @@
 
   <ul class="link-list">
     
-    <li><a href="#method-i-logged_in-3F">#logged_in?</a>
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-show">#show</a>
     
   </ul>
 </nav>
@@ -134,7 +142,7 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="module">module ApplicationHelper</h1>
+  <h1 class="class">class PhotosController</h1>
 
   <div id="description" class="description">
     
@@ -158,10 +166,10 @@
       <h3 class="section-header">Public Instance Methods</h3>
 
     
-      <div id="method-i-logged_in-3F" class="method-detail ">
+      <div id="method-i-index" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">logged_in?</span><span
+          <span class="method-name">index</span><span
             class="method-args">()</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
@@ -173,19 +181,62 @@
           
 
           
-          <div class="method-source-code" id="logged_in-3F-source">
-            <pre><span class="ruby-comment"># File app/helpers/application_helper.rb, line 3</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">logged_in?</span>
-  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">authorization</span>.<span class="ruby-identifier">present?</span>
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File app/controllers/photos_controller.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+
+  
+
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- logged_in-3F-source -->
+          </div><!-- index-source -->
           
         </div>
 
         
 
         
-      </div><!-- logged_in-3F-method -->
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-show" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">show</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="show-source">
+            <pre><span class="ruby-comment"># File app/controllers/photos_controller.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+
+  <span class="ruby-identifier">album_name</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]
+  <span class="ruby-identifier">album_id</span> = <span class="ruby-ivar">@album_names</span>[<span class="ruby-identifier">album_name</span>]
+  
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;errors/not_found&quot;</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">album_id</span>.<span class="ruby-identifier">blank?</span>
+  
+  <span class="ruby-ivar">@album</span> = <span class="ruby-identifier">flickr</span>.<span class="ruby-identifier">photosets</span>.<span class="ruby-identifier">getPhotos</span>(<span class="ruby-value">:photoset_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">album_id</span>)
+  
+  <span class="ruby-identifier">info</span> = <span class="ruby-identifier">flickr</span>.<span class="ruby-identifier">photosets</span>.<span class="ruby-identifier">getInfo</span>(<span class="ruby-value">:photoset_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">album_id</span>)
+  <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">info</span>.<span class="ruby-identifier">title</span>
+  <span class="ruby-ivar">@description</span> = <span class="ruby-identifier">info</span>.<span class="ruby-identifier">description</span>
+
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- show-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- show-method -->
 
     
     </section><!-- public-instance-method-details -->

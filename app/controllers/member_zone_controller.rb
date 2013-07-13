@@ -3,7 +3,7 @@ class MemberZoneController < ApplicationController
 
   def index
   
-    # Static
+    @rush_recommendations = RushRecommendation.order("created_at DESC")
     
   end
 end

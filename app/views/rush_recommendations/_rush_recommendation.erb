@@ -1,0 +1,7 @@
+<tr>
+  <td><%= rush_recommendation.name %></td>
+  <td><%= rush_recommendation.class_year %></td>
+  <td><%= number_to_phone rush_recommendation.phone_number, :area_code => true %></td>
+  <td><%= rush_recommendation.email %></td>
+  <td><%= rush_recommendation.created_at.to_s(:slashes) %></td>
+</tr>

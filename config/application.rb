@@ -59,7 +59,7 @@ module Calthetachi
     
     # Prevent error fields in forms from being highlighted
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
-      "#{html_tag}".html_safe 
+      html_tag.html_safe 
     }
     
     # set default time zone to Pacific

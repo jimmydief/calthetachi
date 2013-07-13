@@ -1,10 +1,21 @@
-Thu, 13 Jun 2013 20:33:10 -0700
-doc/README_FOR_APP	Fri, 31 May 2013 23:19:41 -0700
-app/controllers/application_controller.rb	Fri, 31 May 2013 23:19:41 -0700
-app/controllers/landing_controller.rb	Wed, 12 Jun 2013 01:32:23 -0700
-app/controllers/posts_controller.rb	Fri, 31 May 2013 23:22:44 -0700
-app/helpers/application_helper.rb	Wed, 12 Jun 2013 01:02:47 -0700
-app/helpers/landing_helper.rb	Mon, 03 Jun 2013 00:45:52 -0700
-app/helpers/posts_helper.rb	Fri, 31 May 2013 23:22:44 -0700
-app/models/comments.rb	Fri, 31 May 2013 23:47:04 -0700
-app/models/post.rb	Thu, 13 Jun 2013 20:23:10 -0700
+Thu, 11 Jul 2013 03:22:20 -0400
+doc/README_FOR_APP	Sat, 01 Jun 2013 02:19:41 -0400
+app/controllers/application_controller.rb	Tue, 02 Jul 2013 02:12:02 -0400
+app/controllers/comments_controller.rb	Thu, 11 Jul 2013 02:41:51 -0400
+app/controllers/errors_controller.rb	Tue, 09 Jul 2013 19:08:21 -0400
+app/controllers/landing_controller.rb	Thu, 11 Jul 2013 01:01:20 -0400
+app/controllers/member_zone_controller.rb	Thu, 11 Jul 2013 03:00:04 -0400
+app/controllers/photos_controller.rb	Tue, 09 Jul 2013 18:57:28 -0400
+app/controllers/posts_controller.rb	Thu, 11 Jul 2013 02:17:13 -0400
+app/controllers/rush_recommendations_controller.rb	Thu, 11 Jul 2013 03:03:04 -0400
+app/helpers/application_helper.rb	Mon, 08 Jul 2013 03:02:14 -0400
+app/helpers/comments_helper.rb	Mon, 08 Jul 2013 03:39:42 -0400
+app/helpers/errors_helper.rb	Tue, 09 Jul 2013 18:08:55 -0400
+app/helpers/landing_helper.rb	Mon, 03 Jun 2013 03:45:52 -0400
+app/helpers/member_zone_helper.rb	Wed, 03 Jul 2013 01:37:56 -0400
+app/helpers/photos_helper.rb	Fri, 21 Jun 2013 18:30:51 -0400
+app/helpers/posts_helper.rb	Sat, 01 Jun 2013 02:22:44 -0400
+app/helpers/rush_recommendations_helper.rb	Thu, 11 Jul 2013 00:39:03 -0400
+app/models/comment.rb	Thu, 11 Jul 2013 03:11:07 -0400
+app/models/post.rb	Thu, 11 Jul 2013 03:11:02 -0400
+app/models/rush_recommendation.rb	Thu, 11 Jul 2013 02:46:22 -0400

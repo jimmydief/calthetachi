@@ -22,32 +22,26 @@
 
 <section name="rush-contacts">
   <h3>Rush Contacts & Recommendations</h3>
-  <p>Chapter events will be posted in the calendar below which can be synced with your computer or phone.</p>
+  <p>Contact information for potentials interested in being informed about rush events.</p>
   
-  <table>
-    <thead>
-      <tr>
-        <td>Name</td>
-        <td>Class</td>
-        <td>Email</td>
-        <td>Phone Number</td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Jon Voight</td>
-        <td>2013</td>
-        <td>jimbeam@gmail.com</td>
-        <td>(610) 509-3896</td>
-      </tr>
-      <tr>
-        <td>Jon Voight</td>
-        <td>2013</td>
-        <td>jimbeam@gmail.com</td>
-        <td>(610) 509-3896</td>
-      </tr>
-    </tbody>
-  </table>
+  <% if @rush_recommendations.any? %>
+    <table class="striped indexed">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Class</th>
+          <th>Phone Number</th>
+          <th>Email</th>
+          <th>Date Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @rush_recommendations %>
+      </tbody>
+    </table>
+  <% else %>
+    <p class="error">No rush recommendations yet.</p>
+  <% end %>
 </section>
 
 <section name="readme">

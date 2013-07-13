@@ -70,7 +70,7 @@
 
   <ul class="link-list">
     
-    <li><a href="#method-i-display_created_date">#display_created_date</a>
+    <li><a href="#method-i-to_param">#to_param</a>
     
   </ul>
 </nav>
@@ -97,17 +97,41 @@
   
     <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
   
-    <li><a href="./Comments.html">Comments</a>
+    <li><a href="./Comment.html">Comment</a>
+  
+    <li><a href="./CommentsController.html">CommentsController</a>
+  
+    <li><a href="./CommentsHelper.html">CommentsHelper</a>
+  
+    <li><a href="./ErrorsController.html">ErrorsController</a>
+  
+    <li><a href="./ErrorsHelper.html">ErrorsHelper</a>
   
     <li><a href="./LandingController.html">LandingController</a>
   
     <li><a href="./LandingHelper.html">LandingHelper</a>
+  
+    <li><a href="./MemberZoneController.html">MemberZoneController</a>
+  
+    <li><a href="./MemberZoneHelper.html">MemberZoneHelper</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PhotosController.html">PhotosController</a>
+  
+    <li><a href="./PhotosHelper.html">PhotosHelper</a>
   
     <li><a href="./Post.html">Post</a>
   
     <li><a href="./PostsController.html">PostsController</a>
   
     <li><a href="./PostsHelper.html">PostsHelper</a>
+  
+    <li><a href="./RushRecommendation.html">RushRecommendation</a>
+  
+    <li><a href="./RushRecommendationsController.html">RushRecommendationsController</a>
+  
+    <li><a href="./RushRecommendationsHelper.html">RushRecommendationsHelper</a>
   
   </ul>
 </nav>
@@ -140,10 +164,10 @@
       <h3 class="section-header">Public Instance Methods</h3>
 
     
-      <div id="method-i-display_created_date" class="method-detail ">
+      <div id="method-i-to_param" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">display_created_date</span><span
+          <span class="method-name">to_param</span><span
             class="method-args">()</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
@@ -155,19 +179,19 @@
           
 
           
-          <div class="method-source-code" id="display_created_date-source">
-            <pre><span class="ruby-comment"># File app/models/post.rb, line 5</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">display_created_date</span>
-  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">created_at</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-node">&quot;%B #{ActiveSupport::Inflector.ordinalize(self.created_at.day)}, %Y at %-I:%M %P&quot;</span>)
+          <div class="method-source-code" id="to_param-source">
+            <pre><span class="ruby-comment"># File app/models/post.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_param</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">slug</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- display_created_date-source -->
+          </div><!-- to_param-source -->
           
         </div>
 
         
 
         
-      </div><!-- display_created_date-method -->
+      </div><!-- to_param-method -->
 
     
     </section><!-- public-instance-method-details -->

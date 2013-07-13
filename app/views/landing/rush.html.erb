@@ -1,3 +1,11 @@
+<% flash.each do |name, msg| %>
+  <% if name == :error %>
+    <p class="error"><%= msg %></p>
+  <% else %>
+    <p id="notice"><%= msg %></p>
+  <% end %>
+<% end %>
+
 <%#= image_tag "photos/coat-of-arms.jpg", :class => "lead" %>
 
 <div class="page-header">
@@ -13,4 +21,48 @@
   <p>The official Fall 2013 rush week begins Thursday, August 29th on the first day of classes. Our schedule of events will be posted outside the house, and we encourage you to get in touch and ask for details. Those who we feel would be quality brothers will be asked to join us for our bid dinner on Friday, September 6th. Events during rush week include night time socials, barbecues and lawn activities, trips to various local hot spots, and tons of free food and drinks.</p>
   
   <p>We will also be holding some open house events starting on August 24th with a 9pm party to welcome new students.  Feel free to stop by during welcome week and get to know the house and the brothers. Rush is essentially two weeks jam-packed full of fun and is free to all so there is nothing to lose. Please contact us if you are interested. We look forward to meeting you, and wish you well with whatever path you take during you college experience.</p>
+</section>
+
+<section name="rush-form">
+  <h3>Rush Recommendations</h3>
+  <p>If you are interested in hearing about rush events or looking to recommend a current student, please fill out and submit this form:</p>
+  
+  <%= form_for(@rush_recommendation) do |f| %>
+    <% if @rush_recommendation.errors.any? %>
+      <a name="errors"></a>
+      <div id="error_explanation">
+        <h4><%= pluralize(@rush_recommendation.errors.count, "error") %> prevented this recommendation from being saved:</h4>
+  
+        <ul>
+        <% @rush_recommendation.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field-row">
+      <div class="field">
+        <%= f.label :name, "Student Name" %><br />
+        <%= f.text_field :name %>
+      </div>
+      <div class="field">
+        <%= f.label :class_year, "Class Year" %><br />
+        <%= f.select :class_year, options_for_select([ "2014", "2015", "2016", "2017" ], "2017") %>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <%= f.label :phone_number, "Phone Number" %><br />
+        <%= f.text_field :phone_number %>
+      </div>
+      <div class="field">
+        <%= f.label :email, "Email Address" %><br />
+        <%= f.text_field :email %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= f.submit "Create Recommendation" %>
+    </div>
+  <% end %>
 </section>

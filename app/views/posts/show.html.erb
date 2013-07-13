@@ -8,7 +8,7 @@
 
 <div class="page-header">
   <h1><%= @post.title %></h1>
-  <p class="meta">posted by <%= @post.author %> on <%= @post.display_created_date %></p>
+  <p class="meta">posted by <%= @post.author %> on <%= @post.created_at.to_s(:blog) %></p>
 </div>
   
 <p><%= simple_format @post.text %></p>

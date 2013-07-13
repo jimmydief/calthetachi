@@ -110,6 +110,19 @@ form:not(#search-bar) {
   }
 }
 
+select {
+  border: 1px solid dimgrey;
+  height: 24px;
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+form label {
+  &:after {
+    content: ": ";
+  }
+}
+
 button, input[type="submit"], a.button {
   background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
   border: 1px solid #cccccc;
@@ -583,10 +596,74 @@ dl {
   }
 }
 
+section[name="rush-form"] form {
+  display: table;
+  border-spacing: 5px;
+  position: relative;
+  top: -5px;
+  left: -5px;
+  
+  .field-row {
+    display: table-row;
+    
+    .field {
+      display: table-cell;
+    }
+  }
+}
+
 .pull-left {
   float: left;
 }
 
 .pull-right {
   float: right;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  tbody {
+    tr {
+      border-top: 1px solid $silver;
+    }
+  }
+  
+  &.striped {
+    tbody {
+      tr:nth-of-type(odd) {
+        background-color: $lightgrey;
+      }
+    }
+  }
+  
+  &.indexed {
+    thead {
+      tr:before {
+        content: "#";
+        display: table-cell;
+        padding: 8px;
+        font-weight: bold;
+      }
+    }
+    
+    tbody {
+      tr {
+        counter-increment: rowNum;
+        
+        &:before {
+          content: counter(rowNum);
+          display: table-cell;
+          padding: 8px;
+        }
+      }
+    }
+  }
 }
