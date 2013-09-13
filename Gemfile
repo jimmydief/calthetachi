@@ -16,8 +16,8 @@ gem 'pg_search' # full-text search
 gem 'actionview-encoded_mail_to' # mailto obfuscation
 gem 'stringex' # url slugs instead of ids
 gem 'kaminari' # ajax pagination
+gem 'wiselinks'# puts page number in url to fix browser history
 gem 'faker' # fabricated db records for testing
-gem 'wiselinks'
 
 # Gems used only for assets and not required
 # in production environments by default.
