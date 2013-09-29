@@ -48,6 +48,7 @@ GEM
       i18n (~> 0.5)
     flickraw (0.9.6)
     hike (1.2.3)
+    humanizer (2.5.0)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (3.0.1)
@@ -128,6 +129,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   faker
   flickraw
+  humanizer
   jquery-rails
   kaminari
   newrelic_rpm

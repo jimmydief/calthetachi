@@ -5,9 +5,9 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(params[:comment])
     
     if @comment.save
-      redirect_to @post
+      redirect_to @post, :notice => 'Comment was successfully created!'
     else
-      redirect_to @post, :flash => {:error => "Comment creation failed. Please make sure that all fields are filled in."}
+      redirect_to @post, :flash => {:error => "Comment creation failed. Please make sure that all fields are filled in and the security question is answered correctly."}
     end
     
   

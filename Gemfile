@@ -18,6 +18,7 @@ gem 'stringex' # url slugs instead of ids
 gem 'kaminari' # ajax pagination
 gem 'wiselinks'# puts page number in url to fix browser history
 gem 'faker' # fabricated db records for testing
+gem 'humanizer' # block comment bots
 
 # Gems used only for assets and not required
 # in production environments by default.
