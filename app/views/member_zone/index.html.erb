@@ -8,10 +8,10 @@
   <p>The test bank can be accessed by logging into <%= link_to "Google Drive", "https://drive.google.com/" %> with the following credentials:</p>
   <dl>
     <dt>Username</dt>
-    <dd>oxtestbank</dd>
+    <dd><%= ENV["TESTBANK_USERNAME"] || "Only in production..." %></dd>
     
     <dt>Password</dt>
-    <dd>arthurchase</dd>
+    <dd><%= ENV["TESTBANK_PASSWORD"] || "Only in production..." %></dd>
   </dl>
 </section>
 
@@ -92,10 +92,10 @@
         <h4>Namecheap</h4>
         <dl>
           <dt>Username</dt>
-          <dd>thetachimu</dd>
+          <dd><%= ENV["NAMECHEAP_USERNAME"] || "Only in production..." %></dd>
           
           <dt>Password</dt>
-          <dd>#4L!pn6@HnD</dd>
+          <dd><%= ENV["NAMECHEAP_PASSWORD"] || "Only in production..." %></dd>
         </dl>
       </section>
       
@@ -103,10 +103,10 @@
         <h4>Flickr</h4>
         <dl>
           <dt>Username</dt>
-          <dd>calthetachi</dd>
+          <dd><%= ENV["FLICKR_USERNAME"] || "Only in production..." %></dd>
           
           <dt>Password</dt>
-          <dd>h3lpingh4nd</dd>
+          <dd><%= ENV["FLCIKR_PASSWORD"] || "Only in production..." %></dd>
         </dl>
       </section>
   </section>

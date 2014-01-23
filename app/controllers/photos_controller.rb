@@ -6,13 +6,10 @@ class PhotosController < ApplicationController
   before_filter :set_photoset_hash, :only => :show
 
   def index
-  
-    
-  
+    # Static
   end
 
   def show
-  
     album_name = params[:id]
     album_id = @album_names[album_name]
     
@@ -23,7 +20,6 @@ class PhotosController < ApplicationController
     info = flickr.photosets.getInfo(:photoset_id => album_id)
     @title = info.title
     @description = info.description
-  
   end
   
   private
