@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with :name => "calthetachi", :password => "arthurchase", :except => [:index, :show]
+  http_basic_authenticate_with :name => ENV["MEMBER_ZONE_NAME"], :password => ENV["MEMBER_ZONE_PASSWORD"], :except => [:index, :show]
   
   # GET /posts
   # GET /posts.json
