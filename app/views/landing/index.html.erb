@@ -2,14 +2,16 @@
 
 <h1>Welcome Brothers and Alumni</h1>
 
-<p>This site is meant to be a convenient location for active members and graduates alike to catch up on current chapter events and stay connected with one another. If you are not already receiving our alumni newsletter, please contact Alumni Board Vice President <%= mail_to "jason.huertas@gmail.com", "Jason Huertas", :subject => "Mu Chapter Association Newsletter", :body => "Hello, I would like to start receiving the Mu Chapter Newsletter.", :encode => :hex %>. Additionally, if you have any suggestions for news stories or additions to the site, please email brother <%= mail_to "jimmydief@gmail.com", "James Diefenderfer", :subject => "Cal Theta Chi Website", :encode => :hex %>.</p>
+<p>This site is meant to be a convenient location for active members and graduates alike to catch up on current chapter events and stay connected with one another. If you are not already receiving our alumni newsletter, please contact our Alumni Chairman <%= mail_to "r.hayes@berkeley.edu", "Ryan Hayes", :subject => "Mu Chapter Association Newsletter", :body => "Hello, I would like to start receiving the Mu Chapter Newsletter.", :encode => :hex %>. Additionally, if you have any suggestions for news stories or additions to the site, please email brother <%= mail_to "murphym1005@gmail.com", "Michael Murphy", :subject => "Cal Theta Chi Website", :encode => :hex %>.</p>
 
-<p>As the chapter nears its centennial, we continue to uphold our ideals of brotherhood, leadership, and dedication to academics. Truly incredible plans are coming together for Centennial on the weekend of November 16th, 2013. The event will be great fun for all and an excellent chance to catch up with brothers from all ages while celebrating 100 years of Mu Chapter. We hope to see you there!</p>
+<p>Theta Chi Mu Chapter will host its annual Founders Day event on Saturday, April 23rd! Join the active brothers and alumni of all ages in celebrating the successes of our chapter and fraternity.
+
+</p>
 
 <section name="news">
   <div class="page-header">
     <h2>Recent News</h2>
-    <p>The latest happenings from Mu Chapter. More information is available in the <%= link_to "news section", posts_path %> or by <%= mail_to "jason.huertas@gmail.com", "subscribing to the newsletter", :subject => "Mu Chapter Association Newsletter", :body => "Hello, I would like to start receiving the Mu Chapter Newsletter.", :encode => :hex %>.</p>
+    <p>The latest happenings from Mu Chapter. More information is available in the <%= link_to "news section", posts_path %> or by <%= mail_to "r.hayes@berkeley.edu", "subscribing to the newsletter", :subject => "Mu Chapter Association Newsletter", :body => "Hello, I would like to start receiving the Mu Chapter Newsletter.", :encode => :hex %>.</p>
   </div>
   
   <%= render @posts %>
