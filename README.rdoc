@@ -2,4 +2,4 @@
 
 This is the Ruby on Rails website I built for the use of my fraternity as a side project during the summer of 2013. It features integration with the house's Flickr account, a blog and commenting system (with effective anti-spam measures), a system for students interested in rush to submit their contact info, and a member-only zone which lets members make blog posts and view other information.
 
-http://calthetachi.org
+http://calthetachi.herokuapp.com
